@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +10,16 @@ public class GridManager : MonoBehaviour
     void Awake()
     {
         CreateGrid();
+    }
+
+    public Node GetNode(Vector2Int coordinates)
+    {
+        if(grid.ContainsKey(coordinates))
+        {
+            return grid[coordinates];
+        }
+
+        return null;
     }
 
     void CreateGrid()
